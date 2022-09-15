@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <link>
+        <!-- DEFINE THE INFORMATION OF DATA -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+        <!-- DEFINE EXTERNAL RESOURCES -->
+            <!-- 
+                Attrs :
+                    href: hypertext reference.
+                    rel: relationship between linked resource and the current document such as stylesheet, alternate stylesheet, etc..
+                        (https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel)
+                    type: type of the link reference == content-type -->
+
+        <!-- [if condition]-->
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css"/>
+        <link href="css/web.css" rel="stylesheet" type="text/css"/>
+        <!-- <![endif] -->
+
+        <title>WEB TEST</title>
+
+    </head>
+
+    <body>
+        <h1>BASIC OF WEB DEVELOPMENT</h1>
+        <h2>Introduction of web development using javascript</h2>
+
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        <q>Put your quote here!</q>
+
+        <!-- LIST -->
+        <!-- 
+            Lists :
+                ol: ordered list [numbering]
+                ul: unordered list [bullet] -->
+        <ol>
+            <li>Prepare the ingredients</li>
+            <li>Heat the water</li>
+            <li>Add sugar into the pot</li>
+        </ol>
+        <ul>
+            <li>Table</li>
+            <li>Chair</li>
+            <li>Window</li>
+        </ul>
+
+        <!-- TABLE -->
+        <table>
+            <thead style="text-align:center">
+                <tr> <!-- table row -->
+                    <th>Header1</th>
+                    <th>Header2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>R1-Column1</td>
+                    <td>R1-Column2</td>
+                </tr>
+                <tr>
+                    <td>R2-Column1</td>
+                    <td>R2-Column2</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Sum</td>
+                    <td>$180</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- FORM -->
+        <!-- Action represents the page on the server where the value of the information will be sent to. -->
+        <form action="/action.php">
+            <label for="fname">Fullname</label>
+            <input type="text" id="fname" name="fname" placeholder="Fullname" autofocus required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+ul{
+    list-style-type: none; /* remove bullet */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    text-transform: uppercase;
+}
+
+/* List with <a>tag */
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.active{
+    background-color: #eba014;
+}
+
+li a:hover:not(.active){
+    background-color: #111;
+}
+
+.headline {
+    background-color: azure;
+}
+
+/* class Headline with h2 and p tag will be set as following: */
+.headline > h2, p{
+    margin: 4px;
+    font-size: 90%;
+}
+
+footer {
+    line-height: 1;
+    text-align: left;
+}
+
+footer p {
+    font-size: 13pt;
+    font-style: bold;
+}

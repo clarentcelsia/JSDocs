@@ -1,0 +1,20 @@
+/** https://www.w3.org/TR/CSS2/selector.html **/
+* {
+    box-sizing: border-box;
+} 
+
+h1{
+    font-size: 16pt;
+    color: #1c1c1b !important;
+}
+
+h2{
+    font-size: 12pt;
+    color: #1c1c1b !important;
+    font-weight: normal !important; /* remove a bold headline */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
