@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <link href="css/section.css" rel="stylesheet" type="text/css"/>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+        <title>BOOTSTRAP</title>
+    </header>
+
+    <!--https://getbootstrap.com/docs/5.2/layout/containers/-->
+    <body>
+        <div class="container bg-primary">CONTAINER</div>
+        <div class="container-sm bg-dark">CONTAINER WITH DARK BACKGROUND</div>
+        <br>
+
+        <!-- row in bootstrap -->
+        <!-- 
+            https://getbootstrap.com/docs/5.2/layout/grid/ 
+            https://getbootstrap.com/docs/4.0/utilities/borders/
+            https://getbootstrap.com/docs/5.2/layout/gutters/ -> padding
+        -->
+        <div class="container bg-dark text-white">
+            <div class="row align-items-start gx-2">
+                <div class="col border border-light p-3">Home</div>
+                <div class="col border border-light p-3">Menu</div>
+                <div class="col-6 border border-light p-3">About</div>
+            </div>
+        </div>
+        <br>
+
+        <!-- ASIDE -->
+        <h3>The aside element - Styled with CSS</h3>
+        <p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+        <aside style="background-color: lightgray; width: 30%; float: left; padding: 15px; margin-left: 15px; margin-right: 15px; font-style: italic;">
+            <p>The Epcot center is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+        </aside>
+        <p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+ 
+        <img class="img-thumbnail rounded-square" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nature-quotes-landscape-1648265299.jpg?crop=1.00xw:0.760xh;0,0.0587xh&resize=980:*" width="250dp" alt="profile"/>
+        
+        <!-- try other features such as icon, carousel, etc -->
+
+        <!-- DESCRIPTION LIST -->
+        <dl>
+            <dt>Algorithm</dt>
+            <dd>Algorithm is ...</dd>
+        </dl>
+
+        <!-- FIGURE AND CAPTION -->
+        <br>
+        <h4>CAPTION</h4>
+        <figure>
+            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nature-quotes-landscape-1648265299.jpg?crop=1.00xw:0.760xh;0,0.0587xh&resize=980:*" alt="Trulli" style="width:20%">
+            <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+        </figure>
+        <br>
+
+        <div>
+            <button id="btn_enter">Enter</button>
+        </div>
+
+        <script src="C:/Clarenti/Data/Project/JS/index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    </body>
+</html>
