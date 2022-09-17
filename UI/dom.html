@@ -1,0 +1,101 @@
+<!-- DOM (Document Object Model)
+        Is to manipulate html such as removing the element or attr of HTML,
+        Modify Attr of HTML Text, Create New HTML, etc..
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Document</title>
+   </head>
+   <body>
+     <p id="txtp1"></p>
+     <br>
+ 
+     <!-- DOM is created inside script tag.
+            [DOM] Modify Text 
+           -->
+     <script>
+       let p1 = document.getElementById('txtp1');
+       p1.setAttribute('class', 'paragraph');
+       p1.innerHTML = 'This is a first paragraph';
+       p1.style.backgroundColor = 'gray';
+       p1.style.padding = '10px';
+ 
+       let p2 = document.createElement('p');
+       p2.id = 'txtp2';
+       p2.setAttribute('class', 'paragraph');
+       p2.innerHTML = 'This is a second paragraph';
+       p2.style.padding = '10px';
+ 
+       document.body.appendChild(p2);
+ 
+       // print the current paragraph
+       // select all <p>
+       let plist = document.querySelectorAll('p');
+       plist.forEach((element) => {
+         console.log(`${element.id}: ${element.innerHTML}`);
+       });
+ 
+       // text effect for only paragraph
+       let paragraphs = document.getElementsByClassName('paragraph');
+       console.log(paragraphs.item(0));
+ 
+       setInterval(function () {
+         paragraphs[0].style.color = 'red';
+         paragraphs[1].style.color = 'green';
+         setTimeout(function () {
+           paragraphs[0].style.color = 'black';
+           paragraphs[1].style.color = 'black';
+         }, 500);
+       }, 1000);
+ 
+       // create a new heading
+       // create a new heading
+       let h2 = document.createElement('h2');
+       h2.setAttribute('class', 'headings');
+       document.body.appendChild(h2);
+ 
+       // remove recently created heading
+       h2.remove();
+ 
+       // create list
+       // note: document can append only 1 element
+       let div = document.createElement('div');
+       div.id = 'section';
+       document.body.append(div);
+ 
+       const lists = ['apple', 'mango', 'berry'];
+ 
+       let fruitlist = document.createElement('ul');
+       fruitlist.id = 'fruitlist';
+       div.append(fruitlist);
+ 
+       // the returned value (callback) will be saved to params of createItemList
+       lists.forEach(createItemList);
+ 
+       //    for(let i=0; i<lists.length; i++){
+       //     let li = document.createElement("li")
+       //     li.innerHTML = lists[i]
+       //     fruitlist.append(li)
+       //    }
+ 
+       // callback function
+       function createItemList(value, index, arrs) {
+        let li = document.createElement('li');
+        li.innerHTML = value;
+        fruitlist.append(li);
+       }
+
+       let br = document.createElement("br")
+       fruitlist.appendChild(br)
+
+       //---------------------------------------------------
+       // DOM Event
+
+     </script>
+   </body>
+ </html>
+ 
