@@ -13,6 +13,11 @@
    <body>
      <p id="txtp1"></p>
      <br>
+
+     <!-- EVENT -->
+     <p id="question">Do you love me ? ans:</p>
+     <button id="btn_yes">YES</button>
+     <button id="btn_no">NO</button>
  
      <!-- DOM is created inside script tag.
             [DOM] Modify Text 
@@ -94,6 +99,18 @@
 
        //---------------------------------------------------
        // DOM Event
+       let q = document.querySelector("#question")
+       let yes = document.querySelector("#btn_yes")
+       let no = document.querySelector("#btn_no")
+
+       yes.addEventListener("click", (event)=>{
+        (q.innerHTML = `${q.innerHTML} yes`);
+       })
+
+       no.addEventListener("click", (event)=>{
+        console.log(event) //>>> boolean
+        (q.innerHTML = `${q.innerHTML} no`);
+       })
 
      </script>
    </body>

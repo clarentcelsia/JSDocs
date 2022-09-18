@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/clarentcelsia/JSFiles/issues"
   },
-  "homepage": "https://github.com/clarentcelsia/JSFiles#readme"
+  "homepage": "https://github.com/clarentcelsia/JSFiles#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.10"
+  }
 }

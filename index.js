@@ -1,5 +1,8 @@
 // Add "start":"node index.js" in package.json or using nodemon to monitor the changes automatically
 
+
+import fetch from "node-fetch";
+
 /* ====================================================== */
 // const btn = document.getElementById("btn_enter")
 // btn.addEventListener("click", enter)
@@ -59,6 +62,17 @@ class Animal {
     }
     sound(){
         return `${this.new_name} is a ${this.new_type}`
+    }
+
+    /**
+     * @param {any} name
+     */
+    set setName(name){
+        return this.new_name = name;
+    }
+
+    get getName(){
+        return this.new_name;
     }
 }
 
@@ -126,6 +140,29 @@ function Cats(name, voice, whiskerColor){
     Object.setPrototypeOf(newCat, catConstructor)
     newCat.whiskerColor = whiskerColor
     return newCat
+}
+
+ /* Fetching API */
+function API(){
+    const param = {
+        "username":"username",
+        "password":"admin"
+    }
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+    fetch("[YOUR API URL]", {
+        method: "[API METHOD]",
+        cors: "cors", // >>> cors/no-cors/same-origin
+        headers: {
+            "Content-Type": "application/json",
+            "API-KEY": "[YOUR API KEY]"
+        },
+        // convert js value to json string
+        body: JSON.stringify(param)
+    })
+        .then((result)=>{
+            console.log(result);
+        })
 }
 
 function main(){
