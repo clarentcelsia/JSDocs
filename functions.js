@@ -1,6 +1,10 @@
 /* Destructuring assignment is a JS expression that makes it unpack values from arrays/props from object into distinct vars. */
 
-import CoffeeShop from "./promise";
+// import CoffeeShop from "./promise";
+
+/* Using FileReader API for browser to read user's computer file not fs */
+const { log } = require('console');
+const fs = require('fs')
 
 /* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment */
 function objectDestruction(){
@@ -85,6 +89,35 @@ function loops() {
     for (const [i, v] of newMap) {
       console.log(`${i}: ${v}`);
     }
+}
+
+function file(){
+    const file1 = "./json/file1.json"
+    const file2 = "./json/file2.json"
+
+    // Read Provided JSON Files
+    fs.readFile(file1, (error, data1)=>{
+        if (error){
+            return console.log("Can't read file" + error);
+        }
+
+        fs.readFile(file2, (error, data2)=>{
+            if (error){
+                return console.log("Can't read file" + error);
+            }
+
+            // Convert the json to object
+            let jsonstr1 = JSON.parse(data1)
+            let jsonstr2 = JSON.parse(data2) 
+            log(jsonstr1[0]) // get the first list of object
+
+            let print = `Halo, nama kami adalah ${jsonstr1[0].Name}, ${jsonstr2[0].Name}`
+            log(print)
+        })
+    })
+
+    
+
 }
 
 function scope(){
@@ -215,4 +248,5 @@ async function asyncawait(){
         console.log("Your order is not available");
     }
 }
-loops();  
+
+file();  
