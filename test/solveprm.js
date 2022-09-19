@@ -97,3 +97,6 @@ const main = async () => {
 }
 
 // main()
+
+// To cancel async/await or short circuit async/await, you can use another lib such as axios. 
+// https://stackoverflow.com/questions/37624144/is-there-a-way-to-short-circuit-async-await-flow
