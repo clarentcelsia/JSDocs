@@ -60,6 +60,97 @@ function objectDestruction(){
 
 }
 
+function destructuring2(){
+    let datas = {
+        arrdata:{
+            data1: "value1",
+            data2: "value2",
+            data3: "value3",
+        },
+        items:["Pen", "Book"],
+        sold: true
+    }
+    console.log(datas); // >>> {arrdata:{data1:"value1", data2:"value2", data3:"value3"}, items:["Pen", "Book"], sold: true}
+    
+    // Ways to get props
+    console.log(datas["sold"]); // >>> true
+    console.log(datas.sold); // >>> true
+    let { sold } = datas;
+    console.log(sold); // >>> true
+    
+    // Assign new variable with attr "datas". 
+    // for ex. I want to take some information in "datas", but not all attrs in data I need.
+    // I can define it as following:
+    let {
+        arrdata, // >>> available in datas
+        items:[item1, item2], // >>> available in datas
+        stock = 10, // >>> unavailable, so you may/not initialize it 
+        sold: aliasName
+    } = datas
+    // stock = 20
+    // aliasName = false
+    console.log(`${item1} ${stock} ${aliasName}`); // >>> pen 10 true
+
+    // =============================================================================
+
+    // Update new object 
+    let state = {
+        counter:0,
+        isRunning: false,
+    }
+    console.log(state); // >>> state{counter:0, isRunning:false}
+      
+      let updateState = {
+        ...state, // copy the old state value
+        isRunning: true, // >>> add *(if the attr doesnt exist in the previous obj) / update *(attr is exist in the previous object)
+      }
+      console.log(updateState); // >>> state{counter:0, isRunning:true}
+      
+      //NOTE**
+      let updateState2 = {
+        isRunning: true, // >>> Create new attr 'isRunning'
+        ...state, // copy the old state value, but the value of the attr 'isRunning' defined in the 1st line will be replaced by the new shallow copy one.
+      }
+      console.log(updateState); // >>> state{isRunning:false, counter:0}
+      
+}
+
+function arrays() {
+    let arrs = ["item1", "item2", "item3"];
+    arrs[0] // >>> item1
+
+    // Returns an iterable of values in the array
+    const iterator = arrs.values()
+    for (v of iterator){
+        console.log(v); // >>> item1, item2
+    }
+
+    // Returns an iterable of key and value in the array
+    const iterators = arrs.entries()
+    // OR iterators.next().value >>> [0->index, item1->value]
+    for ([i,v] of iterators){
+        console.log(`index-${i}: ${v}`); // >>> index-0: item1, index-1: item2, dst..
+    }
+
+    // Find -> return the first found string
+    const pred = arrs.find(function(s){return s !== "item1"}); // >>> item2
+
+    // Filter -> return string[]
+    const preds = arrs.filter(function(s){return s !== "item1"}); // >>> ["item2", "item3"]
+
+    // Insert & Remove 
+    const removed_last_item = arrs.pop(); // >>> "item3"
+    const removed_first_item = arrs.shift(); // >>> "item1"
+    delete(arrs[1]); // not recommended, because it leaves an undefined object, not removed
+
+    const item_length = arrs.push("item4", "item5") // >>> 5
+
+    // Array section -> take specified element of arr
+    const arrys = arrs.slice(0, -2)  // take element start with index 0 to the 2nd to the last items >>> ["item1, item2"]
+
+    const removed_elements = arrs.splice(0, 2) // >>> returns the element that were removed start from index 0 >> ["item1", "item2"] 
+}
+
 function loops() {
     let a = ['data1', 2, true];
   
